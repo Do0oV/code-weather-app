@@ -13,7 +13,14 @@ exports.getAll = async (ctx) => {
 
 // get one city from DB
 exports.getOne = async (ctx) => {
-
+  const { id } = ctx.params;
+  const city = await City.findOne({_id: id});
+  if (city) {
+    ctx.body = city;
+    ctx.status = 200;
+  } else {
+    ctx.status = 404;
+  }
 };
 
 // save weather info in DB
