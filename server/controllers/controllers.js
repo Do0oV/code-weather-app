@@ -2,7 +2,13 @@ const {City, Weather, Info} = require('../models/city');
 
 // get all cities stored in DB
 exports.getAll = async (ctx) => {
-
+  const cities = await City.find();
+  if (cities) {
+    ctx.body = cities;
+    ctx.status = 200;
+  } else {
+    ctx.status = 404;
+  }
 };
 
 // get one city from DB
