@@ -1,3 +1,5 @@
+const {City, Weather, Info} = require('../models/city');
+
 // get all cities stored in DB
 exports.getAll = async (ctx) => {
 
