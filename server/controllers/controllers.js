@@ -25,5 +25,19 @@ exports.getOne = async (ctx) => {
 
 // save weather info in DB
 exports.save = async (ctx) => {
+  const { id } = ctx.params;
+  const { forecast } = ctx.request.body;
+  const infos = parseWeather(forecast);
 
+  const updated = await City.findOneAndUpdate(
+    {_id: id},
+    {$set: {info: infos}},
+    {new: true}
+    );
+  if (updated) {
+    ctx.body = updated;
+    ctx.status = 200;
+  } else {
+    ctx.status = 404;
+  }
 };
