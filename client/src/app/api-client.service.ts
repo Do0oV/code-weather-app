@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { City } from './models/City';
 import { CurrentWeather } from './models/CurrentWeather';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +32,7 @@ export class ApiClientService {
   }
 
   saveWeather(id, forecast): Observable<City> {
-    return this.http.put<City>(`${this.serverBaseUrl}/save/${id}`, forecast);
+    return this.http.put<City>(`${this.serverBaseUrl}/save/${id}`, forecast, httpOptions);
   }
 
   // Openweathermap
@@ -34,8 +40,8 @@ export class ApiClientService {
     return this.http.get<CurrentWeather>(`${this.weatherApiBaseUrl}/weather?q=${city}&units=metric&appid=${this.apiKey}`)
       .pipe(map(current => CurrentWeather.parse(current)));
   }
-/*
-  getForecastWeather(city): Observable<any> {
 
-  }*/
+  getForecastWeather(cityId): Observable<any> {
+    return this.http.get<any>(`${this.weatherApiBaseUrl}/forecast?id=${cityId}&units=metric&appid=${this.apiKey}`);
+  }
 }

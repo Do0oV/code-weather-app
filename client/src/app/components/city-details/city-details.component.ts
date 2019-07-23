@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { ApiClientService } from '../../api-client.service';
+import { City } from '../../models/City';
 
 @Component({
   selector: 'app-city-details',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CityDetailsComponent implements OnInit {
 
-  constructor() { }
+  city: City;
+
+  constructor(private route: ActivatedRoute, private api: ApiClientService) { }
 
   ngOnInit() {
+    this.route.params.forEach((params: Params) => {
+      const cityId = params.cityId;
+      this.api.getCity(cityId)
+      .subscribe(city => {
+        this.city = city;
+      });
+    });
   }
 
 }
