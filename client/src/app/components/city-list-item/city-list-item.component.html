@@ -1,3 +1,5 @@
 <p *ngIf='city'>
+  <button *ngIf='city.info' [routerLink]='seeDetails(city._id)'>SEE</button>
+  <button *ngIf='city.info === null' (click)='subscribe(city._id)'>ADD</button>
   {{city.name}}
 </p>

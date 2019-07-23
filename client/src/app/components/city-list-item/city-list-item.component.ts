@@ -14,4 +14,13 @@ export class CityListItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  seeDetails(id) {
+    return `/city/${id}`;
+  }
+
+  subscribe() {
+    // send to cities in order to save to DB
+    console.log('subscribe')
+  }
+
 }
