@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ApiClientService } from '../../api-client.service';
+
+import { City } from '../../models/City';
 
 @Component({
   selector: 'app-city-list',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CityListComponent implements OnInit {
 
-  constructor() { }
+  @Input() cities: City[];
+
+  constructor(private api: ApiClientService) { }
 
   ngOnInit() {
+
   }
+
 
 }

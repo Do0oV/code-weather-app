@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { CityListComponent } from './components/city-list/city-list.component';
 import { CityListItemComponent } from './components/city-list-item/city-list-item.component';
 import { CityDetailsComponent } from './components/city-details/city-details.component';
+import { WeatherComponent } from './containers/weather/weather.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CityListComponent,
     CityListItemComponent,
-    CityDetailsComponent
+    CityDetailsComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
