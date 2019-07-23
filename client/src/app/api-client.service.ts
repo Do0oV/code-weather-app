@@ -18,7 +18,7 @@ export class ApiClientService {
 
   serverBaseUrl: string = 'http://localhost:4000';
   weatherApiBaseUrl: string = 'https://api.openweathermap.org/data/2.5';
-  apiKey: string = '4f510f6aeb0a818ddd35fad7382c0c9c';
+  apiKey: string = '';
 
   constructor(private http: HttpClient) { }
 
