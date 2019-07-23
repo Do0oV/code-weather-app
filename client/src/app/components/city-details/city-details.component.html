@@ -1,3 +1,7 @@
-<p *ngIf='city'>
-  {{city.name}}
-</p>
+  <div *ngIf='city'>
+    <div *ngFor='let weather of city.info.weather'>
+      {{weather.day | date}}
+      {{weather.temp}} °C
+    </div>
+  </div>
+

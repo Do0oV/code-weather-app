@@ -1,1 +1,1 @@
-<app-weather *ngIf='cities' [cities]='cities'></app-weather>
+<app-weather (save)='onSave($event)' *ngIf='cities' [cities]='cities'></app-weather>

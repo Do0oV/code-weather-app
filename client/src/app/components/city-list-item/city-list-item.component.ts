@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { City } from '../../models/City';
 
 @Component({
@@ -9,18 +9,21 @@ import { City } from '../../models/City';
 export class CityListItemComponent implements OnInit {
 
   @Input() city: City;
+  @Output() save: EventEmitter<City> = new EventEmitter<City>();
   constructor() { }
 
   ngOnInit() {
+    //console.log(this.city)
   }
 
   seeDetails(id) {
     return `/city/${id}`;
   }
 
-  subscribe() {
+  subscribe(city: City) {
     // send to cities in order to save to DB
     console.log('subscribe')
+    this.save.emit(city);
   }
 
 }

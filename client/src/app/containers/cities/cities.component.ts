@@ -25,4 +25,15 @@ export class CitiesComponent implements OnInit {
     });
   }
 
+  onSave(city: City) {
+    this.api.getForecastWeather(city.city_id)
+    .subscribe(forecast => {
+      this.api.saveWeather(city._id, {forecast})
+      .subscribe(newCity => {
+        this.getCities();
+      })
+
+    })
+  }
+
 }
