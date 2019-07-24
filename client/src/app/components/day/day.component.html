@@ -1,0 +1,20 @@
+  <div class="box" *ngIf='weather'>
+    <div class="date">
+      <div>{{weather.day | date}}</div>
+
+    </div>
+    <div class="icon-temp">
+
+      <div class="icon">
+        <img [src]="weather.icon" />
+      </div>
+      <div class="temp">{{weather.temp}}°C</div>
+    </div>
+    <div class="descr">{{weather.description}}</div>
+    <div class="additional">
+
+      <div class="humidity">humidity: {{weather.humidity}}%</div>
+
+    </div>
+
+  </div>

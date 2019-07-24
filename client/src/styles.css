@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Boogaloo&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  font-family: 'Boogaloo', cursive;
+  background: #fff;
+  color: white;
+}

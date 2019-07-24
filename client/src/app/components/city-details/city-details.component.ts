@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ApiClientService } from '../../api-client.service';
 import { City } from '../../models/City';
+import { Weather } from '../../models/Weather';
 
 @Component({
   selector: 'app-city-details',
@@ -11,15 +12,34 @@ import { City } from '../../models/City';
 export class CityDetailsComponent implements OnInit {
 
   city: City;
+  weather: Weather[];
 
   constructor(private route: ActivatedRoute, private api: ApiClientService) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
     this.route.params.forEach((params: Params) => {
       const cityId = params.cityId;
       this.api.getCity(cityId)
       .subscribe(city => {
         this.city = city;
+        const res = [];
+        this.city.info.weather.forEach(weather=> {
+          res.push(Weather.parse(weather));
+        });
+        this.weather = res;
+      });
+    });
+  }
+  update(city: City) {
+    this.api.getForecastWeather(city.city_id)
+    .subscribe(forecast => {
+      this.api.saveWeather(city._id, {forecast})
+      .subscribe(newCity => {
+        this.getData();
       });
     });
   }

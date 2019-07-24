@@ -9,11 +9,11 @@ import { City } from '../../models/City';
 export class CityListItemComponent implements OnInit {
 
   @Input() city: City;
+
   @Output() save: EventEmitter<City> = new EventEmitter<City>();
   constructor() { }
 
   ngOnInit() {
-    //console.log(this.city)
   }
 
   seeDetails(id) {
@@ -21,8 +21,6 @@ export class CityListItemComponent implements OnInit {
   }
 
   subscribe(city: City) {
-    // send to cities in order to save to DB
-    console.log('subscribe')
     this.save.emit(city);
   }
 

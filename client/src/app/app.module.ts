@@ -8,7 +8,8 @@ import { CityListComponent } from './components/city-list/city-list.component';
 import { CityListItemComponent } from './components/city-list-item/city-list-item.component';
 import { CityDetailsComponent } from './components/city-details/city-details.component';
 import { WeatherComponent } from './containers/weather/weather.component';
-import { CitiesComponent } from './containers/cities/cities.component';
+import { DayComponent } from './components/day/day.component';
+import { HeaderComponent } from './containers/header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CitiesComponent } from './containers/cities/cities.component';
     CityListItemComponent,
     CityDetailsComponent,
     WeatherComponent,
-    CitiesComponent
+    DayComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
