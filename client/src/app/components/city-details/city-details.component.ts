@@ -27,7 +27,7 @@ export class CityDetailsComponent implements OnInit {
       this.api.getCity(cityId)
       .subscribe(city => {
         this.city = city;
-        this.city.info.weather.forEach(weather=> {
+        this.city.info.weather.forEach(weather => {
           this.weather.push(Weather.parse(weather));
         });
       });

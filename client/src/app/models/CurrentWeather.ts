@@ -11,7 +11,7 @@ export class CurrentWeather {
       switch (code) {
         case '01d':
         case '01n':
-         return `${iconUrl}sun.svg`;
+          return `${iconUrl}sun.svg`;
           break;
         case '02d':
         case '02n':

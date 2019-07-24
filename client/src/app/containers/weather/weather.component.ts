@@ -22,8 +22,8 @@ export class WeatherComponent implements OnInit {
       this.cities = data;
       this.cities.forEach(city => {
         this.api.getCurrentWeather(city.name)
-        .subscribe(data => {
-          city.current_weather = data;
+        .subscribe(weather => {
+          city.current_weather = weather;
         });
       });
     });
@@ -35,10 +35,7 @@ export class WeatherComponent implements OnInit {
       this.api.saveWeather(city._id, {forecast})
       .subscribe(newCity => {
         this.getCities();
-      })
-
-    })
+      });
+    });
   }
-
-
 }
