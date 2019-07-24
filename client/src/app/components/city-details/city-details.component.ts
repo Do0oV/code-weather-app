@@ -23,14 +23,13 @@ export class CityDetailsComponent implements OnInit {
   getData() {
     this.route.params.forEach((params: Params) => {
       const cityId = params.cityId;
+      this.weather = [];
       this.api.getCity(cityId)
       .subscribe(city => {
         this.city = city;
-        const res = [];
         this.city.info.weather.forEach(weather=> {
-          res.push(Weather.parse(weather));
+          this.weather.push(Weather.parse(weather));
         });
-        this.weather = res;
       });
     });
   }
