@@ -12,7 +12,7 @@ import { Weather } from '../../models/Weather';
 export class CityDetailsComponent implements OnInit {
 
   city: City;
-  weather: Weather[] = [];
+  weather: Weather[];
 
   constructor(private route: ActivatedRoute, private api: ApiClientService) { }
 
@@ -26,9 +26,11 @@ export class CityDetailsComponent implements OnInit {
       this.api.getCity(cityId)
       .subscribe(city => {
         this.city = city;
+        const res = [];
         this.city.info.weather.forEach(weather=> {
-          this.weather.push(Weather.parse(weather));
+          res.push(Weather.parse(weather));
         });
+        this.weather = res;
       });
     });
   }
