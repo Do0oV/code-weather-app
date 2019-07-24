@@ -9,6 +9,7 @@ import { CityListItemComponent } from './components/city-list-item/city-list-ite
 import { CityDetailsComponent } from './components/city-details/city-details.component';
 import { WeatherComponent } from './containers/weather/weather.component';
 import { DayComponent } from './components/day/day.component';
+import { HeaderComponent } from './containers/header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DayComponent } from './components/day/day.component';
     CityListItemComponent,
     CityDetailsComponent,
     WeatherComponent,
-    DayComponent
+    DayComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
