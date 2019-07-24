@@ -1,6 +1,6 @@
 <div class="box" *ngIf='city.current_weather'>
   <div class="city">
-    <div>{{city.name}}</div>
+    <div>{{city.name | titlecase}}</div>
     <div class="country">{{city.country}}</div>
   </div>
   <div class="icon-temp">
