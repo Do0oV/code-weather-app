@@ -1,0 +1,54 @@
+.box {
+  position: relative;
+  background: rgb(255,225,238);
+  background: radial-gradient(circle, rgba(255,225,238,1) 0%, rgba(148,187,233,1) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+  width: 300px;
+  height:420px;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  height: 15%;
+  font-weight: normal;
+}
+
+.additional {
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.icon img {
+  width: 45%;
+  height: auto;
+}
+
+.icon-temp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 250px;
+}
+
+.temp {
+  font-size: 3rem;
+}
+
+.descr {
+  font-size: 2rem;
+}
+

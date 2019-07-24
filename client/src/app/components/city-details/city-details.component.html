@@ -1,7 +1,12 @@
-  <div *ngIf='city'>
-    <div *ngFor='let weather of city.info.weather'>
-      {{weather.day | date}}
-      {{weather.temp}} °C
+  <div *ngIf='city' class="container">
+    <div class="location">
+      <div class="city">{{city.name | titlecase}}</div>
+      <div class="country">{{city.country}}</div>
+
+    </div>
+    <div class="btn" (click)="update(city)">UPDATE</div>
+    <div class="wrap">
+      <app-day *ngFor='let dayWeather of weather' [weather]='dayWeather'></app-day>
     </div>
   </div>
 

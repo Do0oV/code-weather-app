@@ -18,6 +18,6 @@
     <div class="humidity">Humidity: {{city.current_weather.humidity}}%</div>
 
   </div>
-  <div *ngIf='city.info' [routerLink]='seeDetails(city._id)'class="btn">Access info</div>
+  <div *ngIf='city.info' [routerLink]='seeDetails(city._id)' class="btn">Access info</div>
   <div *ngIf='city.info === null' (click)='subscribe(city)' class="btn">Save weather info</div>
 </div>
