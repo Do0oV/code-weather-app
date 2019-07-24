@@ -26,6 +26,11 @@ const cities = [
   name: 'london',
   country: 'GB',
   city_id: 2643743
+},
+{
+  name: 'helsinki',
+  country: 'FI',
+  city_id: '658225'
 }
 ];
 
