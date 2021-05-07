@@ -1,0 +1,23 @@
+<div class="box" *ngIf='city.current_weather'>
+  <div class="city">
+    <div>{{city.name | titlecase}}</div>
+    <div class="country">{{city.country}}</div>
+  </div>
+  <div class="icon-temp">
+    <div class="icon">
+      <img [src]='city.current_weather.icon' />
+    </div>
+    <div class="temp">{{city.current_weather.temp}}°C</div>
+  </div>
+  <div class="descr">{{city.current_weather.description}}</div>
+  <div class="additional">
+    <div class="min-max">
+      <div class="item">min: {{city.current_weather.temp_min}}°C</div>
+      <div class="item">max: {{city.current_weather.temp_max}}°C</div>
+    </div>
+    <div class="humidity">Humidity: {{city.current_weather.humidity}}%</div>
+
+  </div>
+  <div *ngIf='city.info' [routerLink]='seeDetails(city._id)' class="btn">Access info</div>
+  <div *ngIf='city.info === null' (click)='subscribe(city)' class="btn">Save weather info</div>
+</div>
