@@ -1,17 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { WeatherComponent } from "./weather.component";
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
-import { WeatherComponent } from './weather.component';
-
-describe('WeatherComponent', () => {
+describe("WeatherComponent", () => {
   let component: WeatherComponent;
   let fixture: ComponentFixture<WeatherComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ WeatherComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule],
+        declarations: [WeatherComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WeatherComponent);
@@ -19,7 +21,7 @@ describe('WeatherComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
