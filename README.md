@@ -3,20 +3,22 @@
 code-weather-app is a full stack weather application.
 The application shows the current weather for 5 predefined cities and allows you to subscribe and access the weather for the 4 next days.
 
-
 ## Getting started
 
 This repo contains both Front-End (/client) and Back-End (/server) of the application.
+
 ### Prerequisites
 
-* Node
-* Npm
+- Node
+- Npm
 
 BACK-END:
-* MongoDb
+
+- MongoDb
 
 FRONT-END:
-* [Openweathermap](https://openweathermap.org/) account and API key
+
+- [Openweathermap](https://openweathermap.org/) account and API key
 
 ## Installation
 
@@ -30,29 +32,35 @@ cd code-weather-app
 2. Install dependencies
 
 FRONT-END:
+
 ```
 cd client
 npm install
 ```
-Add your Openweathermap api-key in __api-client.service.ts__ file
 
+Create a **.env** file - following the **.env.example**
 
 BACK-END:
+
 ```
 cd server
 npm install
 npm run db:setup
 ```
-Create a __.env__ file - following the __.env.example__
+
+Create a **.env** file - following the **.env.example**
 
 3. Start development server
 
 FRONT-END:
+
 ```
 cd client
-ng serve
+npm start
 ```
+
 BACK-END:
+
 ```
 cd server
 npm run dev
@@ -60,15 +68,13 @@ npm run dev
 
 ## Built with
 
-* [Angular](https://angular.io/) - Front-End Framework
-* [Koa](https://koajs.com/) - Back-End Framework
-* [MongoDb](https://www.mongodb.com) - Database
-
+- [Angular](https://angular.io/) - Front-End Framework
+- [Koa](https://koajs.com/) - Back-End Framework
+- [MongoDb](https://www.mongodb.com) - Database
 
 ## Author
 
 Dorothee Viard - [Github](https://github.com/Do0oV)
-
 
 ## License
 

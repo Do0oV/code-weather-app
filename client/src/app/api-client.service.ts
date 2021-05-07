@@ -1,7 +1,8 @@
-import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { environment } from "./../environments/environment";
 import { City } from "./models/City";
 import { CurrentWeather } from "./models/CurrentWeather";
 
@@ -15,9 +16,9 @@ const httpOptions = {
   providedIn: "root",
 })
 export class ApiClientService {
-  serverBaseUrl: string = "http://localhost:4000";
-  weatherApiBaseUrl: string = "https://api.openweathermap.org/data/2.5";
-  apiKey: string = "";
+  serverBaseUrl: string = environment.SERVER_BASE_URL;
+  weatherApiBaseUrl: string = environment.OPENWEATHERMAP_API_URL;
+  apiKey: string = environment.OPENWEATHERMAP_API_KEY;
 
   constructor(private http: HttpClient) {}
 
