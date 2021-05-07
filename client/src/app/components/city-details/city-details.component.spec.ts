@@ -1,17 +1,20 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { CityDetailsComponent } from "./city-details.component";
 
-import { CityDetailsComponent } from './city-details.component';
-
-describe('CityDetailsComponent', () => {
+describe("CityDetailsComponent", () => {
   let component: CityDetailsComponent;
   let fixture: ComponentFixture<CityDetailsComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CityDetailsComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [CityDetailsComponent],
+        imports: [RouterTestingModule, HttpClientTestingModule],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CityDetailsComponent);
@@ -19,7 +22,7 @@ describe('CityDetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
