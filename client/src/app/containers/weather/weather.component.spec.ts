@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { WeatherComponent } from "./weather.component";
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
 describe("WeatherComponent", () => {
   let component: WeatherComponent;
